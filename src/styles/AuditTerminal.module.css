@@ -1,0 +1,162 @@
+.terminalContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 450px;
+  background: #02040a;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.9), 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+}
+
+.terminalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  background: #0b0f19;
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.headerTitle {
+  font-family: var(--font-cyber);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--color-text-muted);
+  letter-spacing: 0.1em;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.statusIndicator {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--color-success);
+}
+
+.statusDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-success);
+  box-shadow: 0 0 8px var(--color-success);
+  animation: pulseBlink 2s infinite ease-in-out;
+}
+
+@keyframes pulseBlink {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 1; }
+}
+
+.terminalBody {
+  flex-grow: 1;
+  padding: 1.25rem;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  scroll-behavior: smooth;
+  position: relative;
+}
+
+.logLine {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  line-height: 1.4;
+}
+
+.logCore {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.timestamp {
+  color: var(--color-text-dim);
+  flex-shrink: 0;
+  user-select: none;
+}
+
+/* Color types */
+.type_info {
+  color: var(--color-primary);
+}
+
+.type_warning {
+  color: var(--color-warning);
+}
+
+.type_alert {
+  color: #ff7700;
+}
+
+.type_critical {
+  color: var(--color-error);
+  font-weight: bold;
+}
+
+.type_success {
+  color: var(--color-success);
+}
+
+/* Educational Typology Callout */
+.typologyCallout {
+  margin-top: 0.4rem;
+  margin-left: 5rem;
+  padding: 0.75rem 1rem;
+  background: rgba(0, 240, 255, 0.03);
+  border: 1px solid rgba(0, 240, 255, 0.15);
+  border-left: 3px solid var(--color-primary);
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.calloutLabel {
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.typologyName {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--color-text-main);
+}
+
+.regulatoryRef {
+  font-size: 0.7rem;
+  color: var(--color-text-muted);
+  font-style: italic;
+}
+
+.terminalPromptLine {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--color-text-dim);
+  margin-top: auto;
+  padding-top: 0.5rem;
+}
+
+.promptSymbol {
+  color: var(--color-primary);
+}
+
+.promptCursor {
+  width: 8px;
+  height: 14px;
+  background: var(--color-primary);
+  box-shadow: 0 0 5px var(--color-primary);
+}

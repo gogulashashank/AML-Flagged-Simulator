@@ -1,0 +1,257 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.titleCard {
+  width: 100%;
+  padding: 3rem 2rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  background: var(--color-bg-panel);
+  border: 1px solid var(--color-border);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+}
+
+.titleCard::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--color-primary), transparent);
+  animation: scanlineMove 3s infinite linear;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: rgba(0, 240, 255, 0.1);
+  border: 1px solid var(--color-primary);
+  margin-bottom: 1.5rem;
+  color: var(--color-primary);
+  filter: drop-shadow(0 0 8px rgba(0, 240, 255, 0.3));
+}
+
+.title {
+  font-family: var(--font-cyber);
+  font-size: 3rem;
+  font-weight: 900;
+  letter-spacing: 0.15em;
+  color: var(--color-text-main);
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(135deg, #fff 30%, var(--color-primary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 10px rgba(0, 240, 255, 0.3));
+}
+
+.subtitle {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  letter-spacing: 0.3em;
+  color: var(--color-primary);
+  text-transform: uppercase;
+  margin-bottom: 2.5rem;
+}
+
+.terminalBriefing {
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  text-align: left;
+  background: rgba(4, 6, 15, 0.7);
+  border: 1px solid var(--color-border-light);
+  border-radius: 6px;
+  padding: 1.5rem;
+  margin-bottom: 2.5rem;
+  color: var(--color-text-muted);
+}
+
+.terminalHeader {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--color-border-light);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: var(--color-text-dim);
+}
+
+.terminalPrompt {
+  color: var(--color-primary);
+  margin-right: 0.5rem;
+}
+
+.phasesGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.phaseItem {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
+  padding: 0.75rem;
+}
+
+.phaseTitle {
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: var(--color-text-main);
+  margin-bottom: 0.25rem;
+  text-transform: uppercase;
+}
+
+.phaseDesc {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  line-height: 1.4;
+}
+
+.difficultySection {
+  margin-bottom: 2.5rem;
+  width: 100%;
+}
+
+.sectionTitle {
+  font-family: var(--font-cyber);
+  font-size: 1.1rem;
+  letter-spacing: 0.1em;
+  color: var(--color-text-main);
+  text-transform: uppercase;
+  margin-bottom: 1.25rem;
+}
+
+.difficultyCards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.diffCard {
+  background: rgba(13, 20, 38, 0.4);
+  border: 1px solid var(--color-border-light);
+  border-radius: 8px;
+  padding: 1.5rem;
+  text-align: left;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+}
+
+.diffCard:hover {
+  background: rgba(0, 240, 255, 0.03);
+  border-color: rgba(0, 240, 255, 0.25);
+  transform: translateY(-2px);
+}
+
+.diffCardActive {
+  background: rgba(0, 240, 255, 0.06) !important;
+  border-color: var(--color-primary) !important;
+  box-shadow: 0 0 15px rgba(0, 240, 255, 0.15);
+}
+
+.diffHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.diffTitle {
+  font-family: var(--font-cyber);
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: var(--color-text-main);
+}
+
+.diffTitleEasy {
+  color: var(--color-success);
+}
+
+.diffTitleHard {
+  color: var(--color-error);
+}
+
+.diffDesc {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+.diffSpecs {
+  list-style: none;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--color-text-dim);
+}
+
+.diffSpecs li {
+  margin-bottom: 0.4rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.diffSpecs li::before {
+  content: "»";
+  color: var(--color-primary);
+}
+
+.playButton {
+  font-family: var(--font-cyber);
+  font-weight: bold;
+  font-size: 1.25rem;
+  letter-spacing: 0.2em;
+  padding: 1rem 3rem;
+  color: var(--color-bg-base);
+  background: var(--color-primary);
+  border-radius: 4px;
+  text-transform: uppercase;
+  border: 1px solid var(--color-primary);
+  box-shadow: 0 0 20px rgba(0, 240, 255, 0.4);
+  transition: all var(--transition-normal);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.playButton:hover {
+  background: transparent;
+  color: var(--color-primary);
+  box-shadow: 0 0 30px rgba(0, 240, 255, 0.6);
+  text-shadow: 0 0 8px rgba(0, 240, 255, 0.4);
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 2.2rem;
+  }
+  
+  .phasesGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .difficultyCards {
+    grid-template-columns: 1fr;
+  }
+}
