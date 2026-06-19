@@ -1,73 +1,109 @@
-# React + TypeScript + Vite
+# 🚨 AML Transaction Flagging Simulator
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> An interactive, browser-based simulator that puts you in the role of an AML Compliance Analyst — reviewing real-world-style financial transactions and deciding which ones to flag as suspicious.
 
-Currently, two official plugins are available:
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Visit%20App-blue?style=for-the-badge)](https://aml-flagged-simulator.vercel.app)
+[![Built With](https://img.shields.io/badge/Built%20With-React%20%2B%20TypeScript-61DAFB?style=for-the-badge&logo=react)]
+[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-000000?style=for-the-badge&logo=vercel)]
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## 📌 About the Project
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+This simulator was built to demonstrate practical knowledge of **Anti-Money Laundering (AML)** concepts, transaction monitoring, and financial crime red flags — presented in an engaging, game-like format.
 
-## Expanding the ESLint configuration
+The app walks users through a series of financial transactions and challenges them to identify which ones exhibit suspicious behaviour based on real AML typologies such as:
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- Structuring / Smurfing
+- Rapid movement of funds
+- Unusual transaction patterns
+- High-risk jurisdiction transfers
+- Round-dollar transactions
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## 🎮 How It Works
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+1. **Intro Screen** — Brief overview of your role as a compliance analyst
+2. **Game Board** — Review a series of transactions with key details (amount, origin, frequency, counterparty)
+3. **Outcome Screen** — See your score, which transactions you correctly flagged, and explanations for each decision
+
+---
+
+## 🛠️ Tech Stack
+
+| Technology | Purpose |
+|---|---|
+| React + TypeScript | Frontend framework & type safety |
+| Vite | Fast build tool & dev server |
+| Zustand (store) | Lightweight global state management |
+| CSS Modules | Scoped component styling |
+| Docker | Containerisation for consistent deployment |
+| Vercel | Cloud deployment & CI/CD |
+
+---
+
+## 📁 Project Structure
+
+```
+src/
+├── components/      # IntroScreen, GameBoard, OutcomeScreen
+├── data/            # Transaction datasets & AML scenarios
+├── store/           # Zustand state management
+├── styles/          # Global and component styles
+├── utils/           # Scoring logic and AML flag detection
+├── App.tsx          # Root component with stage routing
+└── main.tsx         # App entry point
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 🚀 Getting Started Locally
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+# Clone the repository
+git clone https://github.com/gogulashashank/AML-Flagged-Simulator.git
+
+# Navigate to the project directory
+cd AML-Flagged-Simulator
+
+# Install dependencies
+npm install
+
+# Start the development server
+npm run dev
 ```
+
+Open [http://localhost:5173](http://localhost:5173) in your browser.
+
+---
+
+## 🐳 Running with Docker
+
+```bash
+docker build -t aml-simulator .
+docker run -p 8080:80 aml-simulator
+```
+
+---
+
+## 🎯 Why I Built This
+
+I am actively pursuing a career in **AML Compliance and Financial Crime Prevention**, and I wanted to go beyond just studying theory. This project demonstrates:
+
+- Understanding of AML red flags and transaction monitoring
+- Ability to translate compliance knowledge into a working technical product
+- Hands-on experience with React, TypeScript, and modern deployment pipelines
+
+It complements my studies towards the **ICA Certificate in Anti-Money Laundering**.
+
+---
+
+## 📬 Contact
+
+**Shashank Gogula**  
+[LinkedIn](https://www.linkedin.com/in/gogulashashank) • [GitHub](https://github.com/gogulashashank)
+
+---
+
+*Built with React + TypeScript + Vite | Deployed on Vercel*
